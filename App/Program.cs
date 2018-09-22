@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Standard;
+using System;
 
 namespace App
 {
@@ -6,7 +7,8 @@ namespace App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello from .NET Core!");
+            StandardUtil.Run();
         }
     }
 }
