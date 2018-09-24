@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 
 namespace Full
 {
@@ -6,7 +7,10 @@ namespace Full
     {
         public static void Run()
         {
-            Console.WriteLine("Hello from .NET Framework!");
+            var key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion");
+            var product = key.GetValue("ProductName");
+
+            Console.WriteLine($"Hello from .NET Framework on {product}!");
         }
     }
 }
